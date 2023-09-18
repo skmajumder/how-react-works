@@ -1,4 +1,5 @@
 function Tab({ num, activeTab, onClick }) {
+
   return (
     <button
       className={activeTab === num ? "tab active" : "tab"}
