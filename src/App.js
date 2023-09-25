@@ -1,4 +1,5 @@
-import Tabbed from "./components/Tabbed";
+import { Suspense, lazy } from "react";
+const Tabbed = lazy(() => import("./components/Tabbed"));
 
 const content = [
   {
@@ -24,7 +25,9 @@ const content = [
 export default function App() {
   return (
     <div>
-      <Tabbed content={content} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Tabbed content={content} />
+      </Suspense>
     </div>
   );
 }
